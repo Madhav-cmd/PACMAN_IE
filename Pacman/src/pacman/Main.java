@@ -28,15 +28,16 @@ public class Main {
 		System.out.println("\nEnter 1 to Start  the Game.");	
 		Scanner obj = new Scanner(System.in);
 		String input = obj.nextLine();
-		int choice = Integer.parseInt(input);
-		processShowMenuChoice(choice);
+		processShowMenuChoice(input);
 	}
 	
-	public void processShowMenuChoice(int choice) {
-		switch (choice) {
-		case 1:
+	public void processShowMenuChoice(String choice) {
+	
+		if(choice.equals("1")) {
 			startGame();
-			break;
+		}
+		else {
+			showMenu();
 		}
 	}
 	
@@ -51,7 +52,7 @@ public class Main {
 		String f = "top";
 		
 		do {
-			System.out.println("Please enter the commands:");
+			System.out.println("Please enter the commands or enter 'end' to finish the game:");
 			String inputCommand = myObj.nextLine();
 			String command = inputCommand.toUpperCase();
 			
@@ -65,7 +66,7 @@ public class Main {
 				if(loc.CheckLocation(xTemp, yTemp, fTemp)) {
 					x = xTemp; y = yTemp; f = fTemp;
 				}
-				else {System.out.println("Invalid position try agin");}
+				else {System.out.println("Invalid position try again");}
 			}
 			
 			// conditions to rotate the face depending upon the current position
@@ -113,13 +114,17 @@ public class Main {
 			// condition to show the final location if it is valid
 			else if(command.contains("REPORT")) {
 				if(loc.CheckLocation(x, y, f)) {
-					running = false;
 					System.out.println("OUTPUT: "+x+","+y+","+f);
 					
 				}
 				else if(!loc.CheckLocation(x, y, f)) {
 					System.out.println("Please enter a valid location first (PLACE).");
 				}
+			}
+			// condition to end the game
+			else if(command.contains("END")) {
+				running = false;
+				System.out.println("Thanks for playing the game");
 			}
 				
 		} while (running);

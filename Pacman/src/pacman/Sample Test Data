@@ -1,0 +1,91 @@
+Test Data:
+**The commands can be in any case, i.e. lower, UPPER or Camel**
+**to start the game enter "1" before inputting the following commands**
+----------------------------
+PLACE 0,0, NORTH
+MOVE
+MOVE
+MOVE
+MOVE
+RIGHT
+MOVE
+MOVE
+MOVE
+MOVE
+RIGHT
+REPORT
+
+Result-
+OUTPUT: 4, 4, SOUTH
+----------------------------
+
+PLACE 0,0, NORTH
+MOVE
+RIGHT
+MOVE
+LEFT
+MOVE
+REPORT
+
+Result-
+OUTPUT: 1,2,NORTH
+----------------------------
+
+PLACE 0,4,EAST
+RIGHT
+MOVE
+PLACE 4 , 4 , SOUTH
+REPORT
+
+Result-
+OUTPUT: 4,4,SOUTH
+----------------------------
+
+RIGHT
+MOVE
+MOVE
+RIGHT
+MOVE
+LEFT
+REPORT
+
+Result-
+Please enter a valid location first (PLACE).
+----------------------------
+
+PLACE 6,0, NORTH
+
+Result-
+Invalid position try again
+----------------------------
+
+PLACE 1,2,EAST
+MOVE
+MOVE
+LEFT
+MOVE
+REPORT
+
+Output: 3,3,NORTH
+----------------------------
+
+PLACE 1,3, NORT
+
+Result-
+Invalid position try again
+----------------------------
+
+PLACE 4,4, south
+left
+Move
+
+Result-
+move not possible
+----------------------------
+
+PLACE 0,0,NORTH
+LEFT
+REPORT
+
+Result-
+Output: 0,0,WEST
